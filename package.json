@@ -1,0 +1,34 @@
+{
+  "name": "vaultlore",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.6.3",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "server",
+    "worker"
+  ],
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "dev:mobile": "pnpm --filter @vaultlore/mobile dev",
+    "dev:web": "pnpm --filter @vaultlore/web dev",
+    "dev:server": "pnpm --filter @vaultlore/server dev",
+    "dev:worker": "pnpm --filter @vaultlore/worker dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "db:generate": "pnpm --filter @vaultlore/server db:generate",
+    "db:migrate": "pnpm --filter @vaultlore/server db:migrate",
+    "db:seed": "pnpm --filter @vaultlore/server db:seed",
+    "local:up": "powershell -ExecutionPolicy Bypass -File ./scripts/dev-up.ps1",
+    "local:down": "powershell -ExecutionPolicy Bypass -File ./scripts/dev-down.ps1",
+    "smoke:api": "powershell -ExecutionPolicy Bypass -File ./scripts/smoke-api.ps1",
+    "smoke:local": "powershell -ExecutionPolicy Bypass -File ./scripts/smoke-local.ps1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "turbo": "^2.4.4",
+    "typescript": "^5.8.2"
+  }
+}

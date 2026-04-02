@@ -1,0 +1,81 @@
+{
+  "expo": {
+    "name": "VaultLore",
+    "slug": "vaultlore",
+    "scheme": "vaultlore",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "experiments": {
+      "typedRoutes": true
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "@sentry/react-native/expo",
+      [
+        "expo-notifications",
+        {
+          "color": "#d6aa52",
+          "sounds": []
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "VaultLore needs camera access to scan your trading cards.",
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "VaultLore needs photo library access to scan cards from your camera roll.",
+          "cameraPermission": "VaultLore needs camera access to photograph your trading cards."
+        }
+      ],
+      "expo-font"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.vaultlore.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "VaultLore needs camera access to scan your trading cards.",
+        "NSPhotoLibraryUsageDescription": "VaultLore needs photo library access to scan cards from your camera roll.",
+        "NSPhotoLibraryAddUsageDescription": "VaultLore saves scanned card images to your photo library.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.vaultlore.app",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "extra": {
+      "apiUrl": "https://api.vaultlore.app/v1",
+      "privacyUrl": "https://app.vaultlore.app/privacy",
+      "termsUrl": "https://app.vaultlore.app/terms",
+      "supportUrl": "https://app.vaultlore.app/support",
+      "supportEmail": "support@vaultlore.app",
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "37d601ed-7efa-4acd-b8d0-94f03bde9dc0"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/37d601ed-7efa-4acd-b8d0-94f03bde9dc0"
+    }
+  }
+}
