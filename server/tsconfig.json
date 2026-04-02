@@ -2,8 +2,12 @@
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "dist",
+    "rootDir": "..",
     "lib": ["ES2022"],
-    "types": ["node"]
+    "types": ["node"],
+    "noEmit": false,
+    "module": "CommonJS",
+    "moduleResolution": "Node"
   },
-  "include": ["src"]
+  "include": ["src", "../packages/shared/src"]
 }
