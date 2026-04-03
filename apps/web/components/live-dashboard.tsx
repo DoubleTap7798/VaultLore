@@ -5,7 +5,9 @@ import { useQuery } from "@tanstack/react-query";
 
 import { createApiClient } from "@vaultlore/api-client";
 
-const baseUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000/v1";
+import { webEnv } from "../lib/env";
+
+const baseUrl = webEnv.NEXT_PUBLIC_API_URL;
 
 export function LiveDashboard() {
   const [token, setToken] = useState<string | null>(() => {

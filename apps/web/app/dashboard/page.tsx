@@ -4,9 +4,7 @@ import { useState } from "react";
 
 import { createApiClient } from "@vaultlore/api-client";
 
-const api = createApiClient({
-  baseUrl: process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000/v1"
-});
+import { webEnv } from "../../lib/env";
 
 export default function DashboardPage() {
   const [token, setToken] = useState("");
@@ -21,7 +19,7 @@ export default function DashboardPage() {
 
     try {
       const client = createApiClient({
-        baseUrl: process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000/v1",
+        baseUrl: webEnv.NEXT_PUBLIC_API_URL,
         getToken: () => token
       });
       const me = await client.getMe();

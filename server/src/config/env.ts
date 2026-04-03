@@ -17,8 +17,6 @@ const envSchema = z.object({
   JWT_SECRET: z.string().min(16),
   ACCESS_TOKEN_TTL_MINUTES: z.coerce.number().default(15),
   REFRESH_TOKEN_TTL_DAYS: z.coerce.number().default(30),
-  EXPO_PUBLIC_API_URL: z.string().url(),
-  NEXT_PUBLIC_API_URL: z.string().url(),
   RAILWAY_ENVIRONMENT: z.string().default("local"),
 
   // --- Storage ---
@@ -65,8 +63,6 @@ export const env = envSchema.parse({
   JWT_SECRET: process.env.JWT_SECRET,
   ACCESS_TOKEN_TTL_MINUTES: process.env.ACCESS_TOKEN_TTL_MINUTES,
   REFRESH_TOKEN_TTL_DAYS: process.env.REFRESH_TOKEN_TTL_DAYS,
-  EXPO_PUBLIC_API_URL: process.env.EXPO_PUBLIC_API_URL,
-  NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
   RAILWAY_ENVIRONMENT: process.env.RAILWAY_ENVIRONMENT,
   STORAGE_PROVIDER: process.env.STORAGE_PROVIDER as "local" | "s3" | "r2" | undefined,
   UPLOAD_DIR: process.env.UPLOAD_DIR,

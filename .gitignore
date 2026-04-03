@@ -4,6 +4,9 @@ node_modules/
 dist/
 build/
 coverage/
+
+# Prevent stale tsc output in package source dirs
+packages/*/src/*.js
 .expo/
 .expo-shared/
 android/
